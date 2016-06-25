@@ -16,6 +16,14 @@
 
 			var layer = L.geoJson($.parseJSON(data), {
 				onEachFeature: (function(feature, layer) {
+
+					console.log(feature.properties.mean);
+
+					
+					layer.bindPopup(feature.properties.mean.toString()); 
+										
+
+
 					if (feature.properties.mean < 0.1) {
 						console.log(feature.properties.mean)
 						layer.setStyle({
@@ -28,7 +36,6 @@
 					}
 
 					if (feature.properties.mean < 0.2 && feature.properties.mean > 0.1) {
-						console.log(feature.properties.mean)
 						layer.setStyle({
 						fillColor: '#71bd7f',
 						fillOpacity: '0.9',
@@ -39,7 +46,6 @@
 					}
 
 					if (feature.properties.mean < 0.3 && feature.properties.mean > 0.2) {
-						console.log(feature.properties.mean)
 						layer.setStyle({
 						fillColor: '#42a755',
 						fillOpacity: '0.9',
@@ -50,7 +56,6 @@
 					}
 
 					if (feature.properties.mean < 0.4 && feature.properties.mean > 0.3) {
-						console.log(feature.properties.mean)
 						layer.setStyle({
 						fillColor: '#13912b',
 						fillOpacity: '0.9',
@@ -60,8 +65,7 @@
 
 					}
 
-					if (feature.properties.mean < 0.6 & feature.properties.mean > 0.4) {
-						console.log(feature.properties.mean)
+					if (feature.properties.mean < 0.6 && feature.properties.mean > 0.4) {
 						layer.setStyle({
 						Color: '#008000',
 						fillColor: '#0d651e',
@@ -72,8 +76,7 @@
 
 					}
 
-					if (feature.properties.mean < 1 & feature.properties.mean > 0.6) {
-						console.log(feature.properties.mean)
+					if (feature.properties.mean < 1 && feature.properties.mean > 0.6) {
 						layer.setStyle({
 						Color: '#008000',
 						fillColor: '#052b0c',
@@ -89,6 +92,8 @@
 					});
 				})
 			});
+
+
 			layer.addTo(mymap);
 			//console.log(tileLayer)
 		})
