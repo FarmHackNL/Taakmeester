@@ -1,5 +1,4 @@
-$( document ).ready(function() {
-
+$(document).ready(function() {
 	var mymap = L.map('map').setView([53.0190, 7.018], 15);
 
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
