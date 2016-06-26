@@ -20,7 +20,7 @@ $(document).ready(function() {
 
         		if (object.properties.mean < 0.1) {
 						feature.setStyle({
-						fillColor: '#a0d3aa',
+						fillColor: '#ebfaeb',
 						fillOpacity: '0.9',
 						opacity: '0'
 					});
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 					if (object.properties.mean < 0.2 && object.properties.mean > 0.1) {
 						feature.setStyle({
-						fillColor: '#71bd7f',
+						fillColor: '#c2f0c2',
 						fillOpacity: '0.9',
 						opacity: '0'
 					});
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 					if (object.properties.mean < 0.3 && object.properties.mean > 0.2) {
 						feature.setStyle({
-						fillColor: '#42a755',
+						fillColor: '#99e699',
 						fillOpacity: '0.9',
 						opacity: '0'
 					});
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 					if (object.properties.mean < 0.4 && object.properties.mean > 0.3) {
 						feature.setStyle({
-						fillColor: '#13912b',
+						fillColor: '#70db70',
 						fillOpacity: '0.9',
 						opacity: '0'
 					});
@@ -53,7 +53,7 @@ $(document).ready(function() {
 					if (object.properties.mean < 0.6 && object.properties.mean > 0.4) {
 						feature.setStyle({
 						Color: '#008000',
-						fillColor: '#0d651e',
+						fillColor: '#47d147',
 						fillOpacity: '0.9',
 						opacity: '0'
 					});
@@ -62,7 +62,7 @@ $(document).ready(function() {
 					if (object.properties.mean < 1 && object.properties.mean > 0.6) {
 						feature.setStyle({
 						Color: '#008000',
-						fillColor: '#052b0c',
+						fillColor: '#29a329',
 						fillOpacity: '0.9',
 						opacity: '0'
 					});
