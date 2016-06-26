@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var mymap = L.map('map').setView([53.0190, 7.018], 15);
+	var mymap = L.map('map').setView([53.0190, 7.018], 16);
 
 	var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 		maxZoom: 18,
@@ -18,35 +18,45 @@ $(document).ready(function() {
 
         		console.log(object.properties.mean)
 
+        		feature.bindPopup(object.properties.mean.toString())
+
         		if (object.properties.mean < 0.1) {
 						feature.setStyle({
-						fillColor: '#ebfaeb',
+						fillColor: '#ffffcc',
 						fillOpacity: '0.9',
-						opacity: '0'
+						opacity: '0.5',
+						color: '#d6d6c2',
+						weight: '1'
 					});
 					}
 
 					if (object.properties.mean < 0.2 && object.properties.mean > 0.1) {
 						feature.setStyle({
-						fillColor: '#c2f0c2',
+						fillColor: '#ffff66',
 						fillOpacity: '0.9',
-						opacity: '0'
+						opacity: '0.5',
+						color: '#d6d6c2',
+						weight: '1'
 					});
 					}
 
 					if (object.properties.mean < 0.3 && object.properties.mean > 0.2) {
 						feature.setStyle({
-						fillColor: '#99e699',
+						fillColor: '#ffff1a',
 						fillOpacity: '0.9',
-						opacity: '0'
+						opacity: '0.5',
+						color: '#d6d6c2',
+						weight: '1'
 					});
 					}
 
 					if (object.properties.mean < 0.4 && object.properties.mean > 0.3) {
 						feature.setStyle({
-						fillColor: '#70db70',
+						fillColor: '#c6ffb3',
 						fillOpacity: '0.9',
-						opacity: '0'
+						opacity: '0.5',
+						color: '#d6d6c2',
+						weight: '1'
 					});
 					}
 
@@ -55,7 +65,9 @@ $(document).ready(function() {
 						Color: '#008000',
 						fillColor: '#47d147',
 						fillOpacity: '0.9',
-						opacity: '0'
+						opacity: '0.5',
+						color: '#d6d6c2',
+						weight: '1'
 					});
 					}
 
@@ -64,7 +76,9 @@ $(document).ready(function() {
 						Color: '#008000',
 						fillColor: '#29a329',
 						fillOpacity: '0.9',
-						opacity: '0'
+						opacity: '0.5',
+						color: '#d6d6c2',
+						weight: '1'
 					});
 					}
 
