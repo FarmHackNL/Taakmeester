@@ -1,6 +1,6 @@
 # Taakmeester
 
-An app which automatically processes and calculates input shapefiles for task maps based on drone immagery. The app enables the farmer to perform manual changes if needed.
+An app which will automatically process data and calculate variables of interest to a farmer. This information can be used to create task maps. The app will also have a functionality that enables manual adjustment of variables before creation of a task map.
 
 ### Steps
 
