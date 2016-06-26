@@ -13,8 +13,8 @@ $(document).ready(function() {
 	var perceel_6 = L.layerGroup();
 
 	var overlayMaps = {
-		"perceel_18": perceel_18,
-		"perceel_6": perceel_6
+		"18m grid": perceel_18,
+		"6m grid": perceel_6
 	};
 
 
