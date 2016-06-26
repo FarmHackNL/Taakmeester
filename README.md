@@ -2,6 +2,10 @@
 
 An app which will automatically process data and calculate variables of interest to a farmer. This information can be used to create task maps. The app will also have a functionality that enables manual adjustment of variables before creation of a task map.
 
+[Live demo](https://farmhacknl.github.io/Taakmeester/)
+
+This is work in progress
+
 ### Steps
 
 1. Crop NDVI image based on field boundaries
@@ -11,6 +15,10 @@ An app which will automatically process data and calculate variables of interest
 5. Visualize grid on map
 6. Enable changing values per gridcell
 7. Export required output (shapefiles for task mapping software)
+
+
+
+
 
 
 
