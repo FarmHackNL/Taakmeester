@@ -16,66 +16,64 @@ $(document).ready(function() {
         	$.each(data.features, function(layer, object) {
         		var feature = L.geoJson(object)
 
-        		console.log(object.properties.mean)
+        		// console.log(object.properties.mean)
 
-        		feature.bindPopup(object.properties.mean.toString())
+        		feature.bindPopup("Mean NDVI: " + object.properties.mean.toString())
 
-        		if (object.properties.mean < 0.1) {
+        		if (object.properties.mean < 0.4) {
 						feature.setStyle({
-						fillColor: '#ffffcc',
-						fillOpacity: '0.9',
+						fillColor: '#ebfaeb',
+						fillOpacity: '1',
 						opacity: '0.5',
 						color: '#d6d6c2',
 						weight: '1'
 					});
 					}
 
-					if (object.properties.mean < 0.2 && object.properties.mean > 0.1) {
+					if (object.properties.mean < 0.5 && object.properties.mean > 0.4) {
 						feature.setStyle({
-						fillColor: '#ffff66',
-						fillOpacity: '0.9',
+						fillColor: '#99e699',
+						fillOpacity: '1',
 						opacity: '0.5',
 						color: '#d6d6c2',
 						weight: '1'
 					});
 					}
 
-					if (object.properties.mean < 0.3 && object.properties.mean > 0.2) {
+					if (object.properties.mean < 0.6 && object.properties.mean > 0.5) {
 						feature.setStyle({
-						fillColor: '#ffff1a',
-						fillOpacity: '0.9',
+						fillColor: '#99e699',
+						fillOpacity: '1',
 						opacity: '0.5',
 						color: '#d6d6c2',
 						weight: '1'
 					});
 					}
 
-					if (object.properties.mean < 0.4 && object.properties.mean > 0.3) {
+					if (object.properties.mean < 0.7 && object.properties.mean > 0.6) {
 						feature.setStyle({
-						fillColor: '#c6ffb3',
-						fillOpacity: '0.9',
+						fillColor: '#70db70',
+						fillOpacity: '1',
 						opacity: '0.5',
 						color: '#d6d6c2',
 						weight: '1'
 					});
 					}
 
-					if (object.properties.mean < 0.6 && object.properties.mean > 0.4) {
+					if (object.properties.mean < 0.8 && object.properties.mean > 0.7) {
 						feature.setStyle({
-						Color: '#008000',
-						fillColor: '#47d147',
-						fillOpacity: '0.9',
+						fillColor: '#33cc33',
+						fillOpacity: '1',
 						opacity: '0.5',
 						color: '#d6d6c2',
 						weight: '1'
 					});
 					}
 
-					if (object.properties.mean < 1 && object.properties.mean > 0.6) {
+					if (object.properties.mean < 1 && object.properties.mean > 0.8) {
 						feature.setStyle({
-						Color: '#008000',
-						fillColor: '#29a329',
-						fillOpacity: '0.9',
+						fillColor: '#145214',
+						fillOpacity: '1',
 						opacity: '0.5',
 						color: '#d6d6c2',
 						weight: '1'
