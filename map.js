@@ -4,6 +4,8 @@ $(document).ready(function() {
 		zoom: 16,
 	});
 
+	var feature;
+
 	var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 		maxZoom: 18,
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -37,6 +39,30 @@ $(document).ready(function() {
     };
 	}
 
+	function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 3,
+			color: '#fd8d3c'
+		});
+
+		if (!L.Browser.ie && !L.Browser.opera) {
+        	layer.bringToFront();
+    	}
+	}
+
+	function resetHighlight(e) {
+   		feature.resetStyle(e.target);
+	}
+
+	function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+    });
+	}
+	
 
 	$.ajax({
             dataType: "json",
@@ -47,15 +73,16 @@ $(document).ready(function() {
 
 
         	$.each(data.features, function(layer, object) {
-        		var feature = L.geoJson(object, {style: style})
+        		var feature = L.geoJson(object, {
+        			style: style,
+        			onEachFeature: onEachFeature	
 
-        		// stylePolygon(feature, object)
+        		})
 
         		// console.log(object.properties.mean)
 
         		feature.bindPopup("Mean NDVI: " + object.properties.mean.toString())
 
-        		// feature.addTo(mymap)
         		perceel_6.addLayer(feature);
         	});
         
@@ -69,9 +96,11 @@ $(document).ready(function() {
         	console.log(data);
 
         	$.each(data.features, function(layer, object) {
-        		var feature = L.geoJson(object, {style: style})
+        		feature = L.geoJson(object, {
+        			style: style,
+        			onEachFeature: onEachFeature
 
-        		// stylePolygon(feature, object)
+        		})
 
         		// console.log(object.properties.mean)
 
@@ -84,5 +113,6 @@ $(document).ready(function() {
      L.control.layers(overlayMaps).addTo(mymap);
 
 	OpenStreetMap_BlackAndWhite.addTo(mymap);
-	perceel_18.addTo(mymap);
+	perceel_6.addTo(mymap);
+
 });
