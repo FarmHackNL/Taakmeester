@@ -1,20 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Taakmeester</title>
-		<link rel="stylesheet" href="library/leaflet.css" />
-		<script src="library/leaflet.js"></script>
-		
-		<link rel="stylesheet" href="style.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
+<head>
+<title>Taakmeester</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="copyright"  content="Taakmeester.nl" />
+<meta name="author" content="Taakmeester" />
+<meta name="robots" content="index,follow" />
+<meta name="content-language" content="nl" />
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style/style_man.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style/open-iconic.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style/socicon.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style/mapstyle.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="library/leaflet.js"></script>
+
+<style>
+        body {
+            color: black;
+            font: 12pt arial;
+            background-color: #FFFFFF;
+			width: 100%;
+            height: 100%;
+        }
+</style>
+
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+<div id="container">
+	<div id="center" class="column">
+	<div class="p_heading"><span>De Taakkaart</span></div>
+
+<div class="c_block">
+		<h1>Dashboard</h1>
+</div>
+<div class="c_block">
+	<div class="cs_info_box">
+		<div class="cs_info_box_header">
+			<h1>Welkom bij de Taakmeester</h1>
+		</div>
+		<div class="cs_info_box_links">
+			<h2>Informatie</h2>
+			<ul>
+				<li>De Taakmeester</li>
+				<li>Softwareversie 0.01</li>
+				
+			</ul>
+			
+		</div>
+		<div class="cs_info_box_links">
+			<h2>Acties</h2>
+			<ul>
+				<li><a href="#"><span class="oi" data-glyph="plus" title="plus" aria-hidden="true"></span>Voorschriften toevoegen</a></li>
+			</ul>
+			
+		</div>
+		<div class="cs_info_box_links">
+			<h2>Dashboard</h2>
+			<ul>
+				<li><a href="#"><span class="oi" data-glyph="key" title="key" aria-hidden="true"></span>Uitloggen</a></li>
+			</ul>
+			
+			
+		</div>
+	</div>
 	
-	</head>
+</div>
 
-	<body>
-		<div id="map"></div>
-		<script src="map.js"></script>
-	</body>
+<div class="c_block">
+	<div id="map">
+		Map
+	</div>
+	
+	<div id="legenda">
+		<div class="legenda_left">
+			<div class="color" style="background-color: #145214;"></div>
+			<div class="color" style="background-color: #33cc33;"></div>
+			<div class="color" style="background-color: #70db70;"></div>
+			<div class="color" style="background-color: #99e699;"></div>
+			<div class="color" style="background-color: #99e699;"></div>
+			<div class="color" style="background-color: #ebfaeb;"></div>
+			<div class="def_button" style="">
+				<a href="#" target="_blank" id="add_page_button"><span class="def_button_name">Bijwerken</span></a>
+			</div>
+		</div>
+		<div class="legenda_right">
+			<form>
+				<ul>
+					<li>Zone 1: <input style="width: 40px;" type="text" value="0" name="z1"></li>
+					<li>Zone 2: <input style="width: 40px;" type="text" value="110" name="z1"></li>
+					<li>Zone 3: <input style="width: 40px;" type="text" value="140" name="z1"></li>
+					<li>Zone 4: <input style="width: 40px;" type="text" value="0" name="z1"></li>
+					<li>Zone 5: <input style="width: 40px;" type="text" value="170" name="z1"></li>
+					<li>Zone 6: <input style="width: 40px;" type="text" value="0" name="z1"></li>
+				</ul>
+				
+				</form> 
+		</div>
+	</div>
+</div>
 
-
+<script src="map.js"></script>
+	
+</div><div id="left" class="column">
+		<div id="menu">
+			<ul>
+				<li>
+					<h1>De Taakmeester</h1><br>
+					<span><span class="oi" data-glyph="dashboard" title="dashboard" aria-hidden="true"></span>Algemeen</span>
+				</li>
+				<li>
+					<ul>
+						<li><a href='taakkaart.html'><span><span class="oi" data-glyph="caret-right" title="caret-right" aria-hidden="true"></span>Taakkaart</span></a></li>
+						<li><a href='bewerken.html'><span><span class="oi" data-glyph="caret-right" title="caret-right" aria-hidden="true"></span>Bewerken</span></a></li>
+						
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="footer"></div>
+</body>
 </html>
