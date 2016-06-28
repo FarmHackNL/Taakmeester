@@ -1,10 +1,6 @@
 # Taakmeester
 
-An app which will automatically process data and calculate variables of interest to a farmer. This information can be used to create task maps. The app will also have a functionality that enables manual adjustment of variables before creation of a task map.
-
-[Live demo](https://farmhacknl.github.io/Taakmeester/)
-
-This is work in progress
+An app which automatically processes and calculates input shapefiles for task maps based on drone immagery. The app enables the farmer to perform manual changes if needed.
 
 ### Steps
 
@@ -15,10 +11,6 @@ This is work in progress
 5. Visualize grid on map
 6. Enable changing values per gridcell
 7. Export required output (shapefiles for task mapping software)
-
-
-
-
 
 
 
