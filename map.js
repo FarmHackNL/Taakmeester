@@ -17,68 +17,24 @@ $(document).ready(function() {
 		"6m grid": perceel_6
 	};
 
+	function getColor(c) {
+		return c < 0.4 ? "#edf8e9"  :
+			c < 0.5 ? "#c7e9c0" :
+			c < 0.6 ? "#a1d99b" :
+			c < 0.7 ? "#74c476" :
+			c < 0.8 ? "#31a354" :
+			c < 1 	? "#006d2c" :
+						 '#FFEDA0';
+	}
 
-	function stylePolygon(feature, object, opacity) {
-		if (object.properties.mean < 0.4) {
-		feature.setStyle({
-		fillColor: '#ebfaeb',
-		fillOpacity: '1',
-		opacity: '0.5',
-		color: '#d6d6c2',
-		weight: '1'
-		});
-		}
-
-		if (object.properties.mean < 0.5 && object.properties.mean > 0.4) {
-			feature.setStyle({
-			fillColor: '#99e699',
-			fillOpacity: '1',
-			opacity: '0.5',
-			color: '#d6d6c2',
-			weight: '1'
-		});
-		}
-
-		if (object.properties.mean < 0.6 && object.properties.mean > 0.5) {
-			feature.setStyle({
-			fillColor: '#99e699',
-			fillOpacity: '1',
-			opacity: '0.5',
-			color: '#d6d6c2',
-			weight: '1'
-		});
-		}
-
-		if (object.properties.mean < 0.7 && object.properties.mean > 0.6) {
-			feature.setStyle({
-			fillColor: '#70db70',
-			fillOpacity: '1',
-			opacity: '0.5',
-			color: '#d6d6c2',
-			weight: '1'
-		});
-		}
-
-		if (object.properties.mean < 0.8 && object.properties.mean > 0.7) {
-			feature.setStyle({
-			fillColor: '#33cc33',
-			fillOpacity: '1',
-			opacity: opacity,
-			color: '#d6d6c2',
-			weight: '1'
-		});
-		}
-
-		if (object.properties.mean < 1 && object.properties.mean > 0.8) {
-			feature.setStyle({
-			fillColor: '#145214',
-			fillOpacity: '1',
-			opacity: '0.5',
-			color: '#d6d6c2',
-			weight: '1'
-		});
-		}
-
+	function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.mean),
+        weight: 1,
+        opacity: 0.5,
+        color: '#d6d6c2',
+        fillOpacity: 1
+    };
 	}
 
 
@@ -91,9 +47,9 @@ $(document).ready(function() {
 
 
         	$.each(data.features, function(layer, object) {
-        		var feature = L.geoJson(object)
+        		var feature = L.geoJson(object, {style: style})
 
-        		stylePolygon(feature, object)
+        		// stylePolygon(feature, object)
 
         		// console.log(object.properties.mean)
 
@@ -113,9 +69,9 @@ $(document).ready(function() {
         	console.log(data);
 
         	$.each(data.features, function(layer, object) {
-        		var feature = L.geoJson(object)
+        		var feature = L.geoJson(object, {style: style})
 
-        		stylePolygon(feature, object)
+        		// stylePolygon(feature, object)
 
         		// console.log(object.properties.mean)
 
